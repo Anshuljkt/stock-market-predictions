@@ -1,6 +1,6 @@
 ---
 title: Project Proposal
-description: 
+description: "" 
 filename: proposal.md
 --- 
 [Homepage](/stock-market-predictions/)
