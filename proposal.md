@@ -1,3 +1,3 @@
 layout: page
 title: "Project Proposal"
-permalink: /proposal
+permalink: /stock-market-predictions/proposal
