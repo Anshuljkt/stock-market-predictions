@@ -1,5 +1,6 @@
 ---
 title: Project Proposal
+description: 
 filename: proposal.md
 --- 
 
@@ -16,14 +17,14 @@ Daily stock market data from the last 20 years for a group of stocks will be pre
 
 In answering our second question, this project will analyze the effectiveness of several supervised learning methods. Recently, the majority of stock price direction prediction literature has focused on Logistic Regression, Neural Networks, K-Nearest Neighbors and Support Vector Machines (Ballings, 2015). We plan to use similar methods in our analysis.
 
-![Image](images/PredictionMethods.jpg)
+![Image](../images/PredictionMethods.jpg)
 
 ## Potential results:
 The clustering analysis will provide results that allow for the categorization of different stocks, and help inform the supervised learning portion of the project. This could allow our supervised models to be evaluated on an overall scale, and on a cluster by cluster basis.
 
 The results from the supervised learning should show the effectiveness of different machine learning models in predicting stock prices at different time steps into the future. The objective is to identify the model, model parameters, and features that predict stock market prices most accurately by comparison.
 
-![Image](images/DowStockHeatmap.png)
+![Image](../images/DowStockHeatmap.png)
 
 ## Discussion:
 Stock selection will be important to ensure a wide representation of sectors and industries. It is possible that certain stocks across different market sectors move similarly. This research could be useful for finding a kind of elasticity among stocks, which is useful for investors wanting to diversify their portfolios and discovering new ways to hedge risk.
