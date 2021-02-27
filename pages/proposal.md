@@ -1,6 +1,6 @@
 ---
 title: Project Proposal
-description: "" 
+description: March 3, 2021
 filename: proposal.md
 --- 
 [Homepage](/stock-market-predictions/)
