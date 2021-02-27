@@ -1,4 +1,4 @@
-## Welcome to GitHub Pages
+## CS4641 Project: Predicting Stock Market Trends using Clustering and Regression Models
 
 You can use the [editor on GitHub](https://github.com/Anshuljkt/stock-market-predictions/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
 
