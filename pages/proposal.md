@@ -5,6 +5,8 @@ filename: proposal.md
 --- 
 [Homepage](/stock-market-predictions/)
 
+[Project Proposal Video](https://www.youtube.com/watch?v=0MCb59bbTCE&feature=youtu.be)
+
 ## Introduction/Background:
 Stock markets are highly volatile in nature: millions of market participants are united in attempting to maximize returns through informed financial decisions. With the recent increase in availability of market data, various computational techniques are being studied for predicting stock movements. The seemingly unrelated information, however, makes it challenging for individuals to utilize the available data; hence, various machine learning approaches could significantly facilitate the process and allow better predictions of stock market trends.
  
