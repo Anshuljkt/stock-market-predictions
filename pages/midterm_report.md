@@ -25,7 +25,7 @@ The data cleaning in this project is minimal since the data in this project is n
 
 In clustering analysis, stocks were compared based on respective movements. Movement is defined as such:
 
-<img src="https://render.githubusercontent.com/render/math?math=Movement = Close - Open">
+<img src="../images/TIs/A.png">
 
 where Movement > 0 defines a net increase in price through the day and Movement < 0 defines a net decrease in price. 
 
@@ -74,7 +74,7 @@ Our supervised learning method makes use of 9 technical indicators to aid predic
     * Exponentially-weighted Moving Average 5-day
 
         <img src="../images/TIs/I.png">
-        
+
     * Exponentially-weighted Moving Average 20-day
 
         <img src="../images/TIs/I.png">
