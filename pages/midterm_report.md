@@ -23,6 +23,14 @@ In clustering analysis, stocks were compared based on respective movements. Move
 
 where Movement > 0 defines a net increase in price through the day and Movement < 0 defines a net decrease in price. 
 
+Our supervised learning method makes use of 9 technical indicators to aid prediction models that are calculated based on pulled stock data from Yahoo Finance. The 9 technical indicators, the equations needed to calculate the indicator, and the indicator’s relevance are as follows:
+Bollinger Bands:
+These bands widen and contract according to the volatility in the stock price. Where prices exceed the upper band, it is deemed to be a relatively high price, and the converse is true when prices exceed the lower band. 
+<img src="https://render.githubusercontent.com/render/math?math=$Upper Bollinger Band = SMA_{20} + 2\sigma_{20day}$">
+
+$Upper Bollinger Band=SMA20+220day$
+Lower Bollinger Band=SMA20-220day
+
 
 ## Methods:
 The features used in both analyses will be added to by preprocessing methods: utilizing daily stock market data to calculate various technical indicators. Several different indicators, models, and model parameters will be tested in this project to optimize results.
