@@ -5,12 +5,25 @@ filename: midterm_report.md
 --- 
 [Homepage](/stock-market-predictions/)
 
+[Project Proposal](/stock-market-predictions/pages/proposal)
+
+
 ## Introduction/Background:
-Stock markets are highly volatile in nature: millions of market participants are united in attempting to maximize returns through informed financial decisions. With the recent increase in availability of market data, various computational techniques are being studied for predicting stock movements. The seemingly unrelated information, however, makes it challenging for individuals to utilize the available data; hence, various machine learning approaches could significantly facilitate the process and allow better predictions of stock market trends.
- 
+Stock markets are highly volatile in nature: millions of market participants are united in attempting to maximize returns through informed financial decisions. With the recent increase in availability of market data, various computational techniques are being studied for predicting stock movements. In this Midterm Update, we have gathered the data necessary, calculated the required technical indicators, set up K-means clustering and a neural network as a prediction model. 
+
+
 ## Problem Definition:
-The first problem we consider is: how can different securities be clustered based on their stock data? We then consider: using past stock data and technical indicators, can we predict the price in the near future (i.e. 1-5 days)?
+There are two problems that we are trying to solve using the S&P500’s 505 stocks as a dataset. Firstly, will clustering of stocks follow that of the 11 sectors defined within the S&P500, or will we find other trends? Secondly,  can we use supervised learning techniques on previous stock market data and its relevant technical indicators to accurately predict a stock’s price a 1-5 days into the future?
  
+## Data Collection and Pre-Processing
+Stock market data was easily pulled directly from Yahoo Finance’s libraries. This gives us access to the Open, Close, Adjusted Close, High, Low, and Volume data for a given stock at a daily resolution. A list containing all of the stock’s ticker symbols is used in combination with Pandas Datareader to pull the relevant data required for analysis.
+In clustering analysis, stocks were compared based on respective movements. Movement is defined as such:
+
+<img src="https://render.githubusercontent.com/render/math?math=Movement = Close - Open">
+
+where Movement > 0 defines a net increase in price through the day and Movement < 0 defines a net decrease in price. 
+
+
 ## Methods:
 The features used in both analyses will be added to by preprocessing methods: utilizing daily stock market data to calculate various technical indicators. Several different indicators, models, and model parameters will be tested in this project to optimize results.
 
