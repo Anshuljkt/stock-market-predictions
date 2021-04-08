@@ -59,15 +59,24 @@ Our supervised learning method makes use of 9 technical indicators to aid predic
 
     The moving average is generated over a specified period and is recalculated daily based on the average closing price across the required number of days. We use 5 different types of moving averages throughout our analysis.
 
-    - Simple Moving Average 5-day    
+    * Simple Moving Average 5-day    
+
         <img src="../images/TIs/F.png">
-    - Simple Moving Average 20-day
+
+    * Simple Moving Average 20-day
+
         <img src="../images/TIs/G.png">
-    - Simple Moving Average Ratio
+
+    * Simple Moving Average Ratio
+
         <img src="../images/TIs/H.png">
-    - Exponentially-weighted Moving Average 5-day
+
+    * Exponentially-weighted Moving Average 5-day
+
         <img src="../images/TIs/I.png">
-    - Exponentially-weighted Moving Average 20-day
+        
+    * Exponentially-weighted Moving Average 20-day
+
         <img src="../images/TIs/I.png">
 
 6. Moving Average Convergence Divergence (MACD)
