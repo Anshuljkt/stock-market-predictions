@@ -151,7 +151,7 @@ Here’s an example of running the algorithm on Apple and TSLA from 2014 to 2021
 3. 1 hidden layer with output dimensions = 90 (5 per indicator) and an output layer with dimension = 18 (one per indicator)
 
 <p align="center">    
-    <img src="../images/LSTM/1*.png" width="40%"/>     <img src="../images/KMeans/2.png" width="40%"/>
+    <img src="../images/LSTM/1.png" width="40%"/>     <img src="../images/KMeans/2.png" width="40%"/>
 </p>
 
 There were, however, some surprising results. For example, from the second half of 2019 until present day, TSLA has been a very volatile stock. To see if this impacted the error, we only ran the algorithm from 2014 to mid-2019 with the same parameters:
