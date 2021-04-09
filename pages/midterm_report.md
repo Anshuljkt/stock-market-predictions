@@ -151,7 +151,7 @@ Here’s an example of running the algorithm on Apple and TSLA from 2014 to 2021
 3. 1 hidden layer with output dimensions = 90 (5 per indicator) and an output layer with dimension = 18 (one per indicator)
 
 <p align="center">    
-    <img src="../images/LSTM/1.png" width="40%"/>     <img src="../images/KMeans/2.png" width="40%"/>
+    <img src="../images/LSTM/1.png" width="40%"/>     <img src="../images/LSTM/2.png" width="40%"/>
 </p>
 
 There were, however, some surprising results. For example, from the second half of 2019 until present day, TSLA has been a very volatile stock. To see if this impacted the error, we only ran the algorithm from 2014 to mid-2019 with the same parameters:
@@ -161,7 +161,7 @@ There were, however, some surprising results. For example, from the second half 
 3. 1 hidden layer with output dimensions = 90 (5 per indicator) and an output layer with dimension = 18 (one per indicator)
 
 <p align="center">
-    <img src="../images/KMeans/3.png" width="80%" />     
+    <img src="../images/LSTM/3.png" width="80%" />     
 </p>
 
 As observed, the root mean squared error actually went up. This was surprising because volatility usually makes stock prices harder to predict, which did not happen in this case.
@@ -173,7 +173,7 @@ Another surprising result was running the algorithm on TSLA from 2014 to 2021 wi
 3. Output layer with dimension = 18 (one per indicator)
 
 <p align="center">
-    <img src="../images/KMeans/4.png" width="80%" />     
+    <img src="../images/LSTM/4.png" width="80%" />     
 </p>
 
 This gave our best result since it had the lowest root mean squared error among all the TSLA parameter changes made. This is surprising because adding LSTM hidden layers supposedly makes the model deeper, and more of a deep learning technique.
@@ -188,21 +188,24 @@ To show this I’ll run this analysis on one stock from each KMeans cluster.
 
 <p align="center">
     <b>From AMGN from Cluster 0:</b>
-    <img src="../images/KMeans/5.png" width="80%" />     
+    <img src="../images/LSTM/5.png" width="80%" />     
     <br>
     <b>BIIB from Cluster 1:</b>
     <br>
-    <img src="../images/KMeans/6.png" width="80%" />     
+    <img src="../images/LSTM/6.png" width="80%" />     
     <b>BIIB from Cluster 1:</b>
-    <img src="../images/KMeans/6.png" width="80%" />     
+    
+    
+    
+    <img src="../images/LSTM/6.png" width="80%" />     
     <b>BIIB from Cluster 1:</b>
-    <img src="../images/KMeans/6.png" width="80%" />     
+    <img src="../images/LSTM/6.png" width="80%" />     
     <b>BIIB from Cluster 1:</b>
-    <img src="../images/KMeans/6.png" width="80%" />     
+    <img src="../images/LSTM/6.png" width="80%" />     
     <b>BIIB from Cluster 1:</b>
-    <img src="../images/KMeans/6.png" width="80%" />     
+    <img src="../images/LSTM/6.png" width="80%" />     
     <b>BIIB from Cluster 1:</b>
-    <img src="../images/KMeans/6.png" width="80%" />     
+    <img src="../images/LSTM/6.png" width="80%" />     
     
 </p>
 
