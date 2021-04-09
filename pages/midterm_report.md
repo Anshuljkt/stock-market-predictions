@@ -116,7 +116,9 @@ Before any analysis was performed, it was important to normalize the movement of
 
 Initially, the K-means clustering analysis was performed without such normalization, which yielded undesired results; the plot of such clustering can be seen below:
 
-<img src="../images/KMeans/NNClustering.png" align="center" width="60%" /> 
+<p align="center">
+    <img src="../images/KMeans/NNClustering.png" width="60%" />     
+</p>
 
 After recognizing the need for normalization, another clustering analysis was performed. The 100 selected stocks were separated in 6 clusters. This number of clusters was selected based on the approximate number of sectors that these stocks belong to. As a result of such clustering, the  companies were split up the following way:
 
@@ -128,10 +130,81 @@ After recognizing the need for normalization, another clustering analysis was pe
 
 The stocks were approximately split based on their performance throughout the year. More analysis will have to be performed before the final stage on the exact parameters for such clustering, but the price changes throughout the year is the initial hypothesis, which qualitatively makes sense; however, as previously mentioned, a more extensive technical analysis will be performed. The plot for K-means clustering with normalized price movements is provided below. 
 
-<img src="../images/KMeans/NClustering.png" style="text-align: center; display: block;" width="60%" /> 
+<p align="center">
+    <img src="../images/KMeans/NClustering.png" width="80%" />     
+</p>
 
 ## LSTM
+Results varied a lot depending on the chosen stock and the input parameters. We discussed the three default starting settings above:
 
+1. A 60 day LSTM window
+2. 200 as the dimension of hidden state vector
+3. A single hidden layer of 5 times the number of indicators
+
+
+Since neural networks are prone to overfitting, we wanted to make sure to change each one of these settings and observe the results.
+ 
+Here’s an example of running the algorithm on Apple and TSLA from 2014 to 2021:
+
+1. Window = 60 days (1080 input variables)
+2. Hidden state vector dimension = 200
+3. 1 hidden layer with output dimensions = 90 (5 per indicator) and an output layer with dimension = 18 (one per indicator)
+
+<p align="center">    
+    <img src="../images/LSTM/1*.png" width="40%"/>     <img src="../images/KMeans/2.png" width="40%"/>
+</p>
+
+There were, however, some surprising results. For example, from the second half of 2019 until present day, TSLA has been a very volatile stock. To see if this impacted the error, we only ran the algorithm from 2014 to mid-2019 with the same parameters:
+
+1. Window = 60 days (1080 input variables)
+2. Hidden state vector dimension = 200
+3. 1 hidden layer with output dimensions = 90 (5 per indicator) and an output layer with dimension = 18 (one per indicator)
+
+<p align="center">
+    <img src="../images/KMeans/3.png" width="80%" />     
+</p>
+
+As observed, the root mean squared error actually went up. This was surprising because volatility usually makes stock prices harder to predict, which did not happen in this case.
+ 
+Another surprising result was running the algorithm on TSLA from 2014 to 2021 without a hidden layer.
+
+1. Window = 60 days (1080 input variables)
+2. Hidden state vector dimension = 200
+3. Output layer with dimension = 18 (one per indicator)
+
+<p align="center">
+    <img src="../images/KMeans/4.png" width="80%" />     
+</p>
+
+This gave our best result since it had the lowest root mean squared error among all the TSLA parameter changes made. This is surprising because adding LSTM hidden layers supposedly makes the model deeper, and more of a deep learning technique.
+
+In the end it is obvious that choosing the best parameters for the LSTM will vary based on the data (the stock and its time frame). We can estimate however, that the model parameters that worked consistently well were:
+1. Window = 60 days (1080 input variables)
+2. Hidden state vector dimension = 200
+3. 1 hidden layer with output dimensions = 54 (3 per indicator) and an output layer with dimension = 18 (one per indicator)
+
+To show this I’ll run this analysis on one stock from each KMeans cluster. 
+
+
+<p align="center">
+    <b>From AMGN from Cluster 0:</b>
+    <img src="../images/KMeans/5.png" width="80%" />     
+    <br>
+    <b>BIIB from Cluster 1:</b>
+    <br>
+    <img src="../images/KMeans/6.png" width="80%" />     
+    <b>BIIB from Cluster 1:</b>
+    <img src="../images/KMeans/6.png" width="80%" />     
+    <b>BIIB from Cluster 1:</b>
+    <img src="../images/KMeans/6.png" width="80%" />     
+    <b>BIIB from Cluster 1:</b>
+    <img src="../images/KMeans/6.png" width="80%" />     
+    <b>BIIB from Cluster 1:</b>
+    <img src="../images/KMeans/6.png" width="80%" />     
+    <b>BIIB from Cluster 1:</b>
+    <img src="../images/KMeans/6.png" width="80%" />     
+    
+</p>
 
 
 # Discussion
