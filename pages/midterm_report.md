@@ -116,16 +116,19 @@ Before any analysis was performed, it was important to normalize the movement of
 
 Initially, the K-means clustering analysis was performed without such normalization, which yielded undesired results; the plot of such clustering can be seen below:
 
-<img src="../images/KMeans/NNClustering.png" style="text-align: center; display: block;" width="40%" /> 
+<img src="../images/KMeans/NNClustering.png" align="center" width="60%" /> 
 
 After recognizing the need for normalization, another clustering analysis was performed. The 100 selected stocks were separated in 6 clusters. This number of clusters was selected based on the approximate number of sectors that these stocks belong to. As a result of such clustering, the  companies were split up the following way:
 
 
-<img src="../images/KMeans/Clusters.png" style="text-align: center; display: block;" width="40%" /> 
+<p align="center">
+    <img src="../images/KMeans/Clusters.png" width="60%" />     
+</p>
+
 
 The stocks were approximately split based on their performance throughout the year. More analysis will have to be performed before the final stage on the exact parameters for such clustering, but the price changes throughout the year is the initial hypothesis, which qualitatively makes sense; however, as previously mentioned, a more extensive technical analysis will be performed. The plot for K-means clustering with normalized price movements is provided below. 
 
-<img src="../images/KMeans/NClustering.png" style="text-align: center; display: block;" width="40%" /> 
+<img src="../images/KMeans/NClustering.png" style="text-align: center; display: block;" width="60%" /> 
 
 ## LSTM
 
