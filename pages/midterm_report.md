@@ -175,7 +175,7 @@ Here’s an example of running the algorithm on Apple and TSLA from 2014 to 2021
 
 <p align="center">    
     <img src="../images/LSTM/1.png" width="47%"/>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;
     <img src="../images/LSTM/2.png" width="47%"/>
 </p>
 
