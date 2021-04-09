@@ -25,7 +25,9 @@ The data cleaning in this project is minimal since the data in this project is n
 
 In clustering analysis, stocks were compared based on respective movements. Movement is defined as such:
 
-<img src="../images/TIs/A.png">
+<p align="center">
+    <img src="../images/TIs/A.png">
+</p>
 
 where Movement > 0 defines a net increase in price through the day and Movement < 0 defines a net decrease in price. 
 
@@ -34,26 +36,34 @@ Our supervised learning method makes use of 9 technical indicators to aid predic
 1. Bollinger Bands:
 
     These bands widen and contract according to the volatility in the stock price. Where prices exceed the upper band, it is deemed to be a relatively high price, and the converse is true when prices exceed the lower band. 
+    <p align="center">
+        <img src="../images/TIs/B.png">
+    </p>
     
-    <img src="../images/TIs/B.png">
 
 2. Commodity Channel Index (CCI)
     
     The CCI is used to identify cyclical turns across a range of asset classes as well as overbought/sold levels for securities.
 
-    <img src="../images/TIs/C.png">
+    <p align="center">
+        <img src="../images/TIs/C.png">
+    </p>
 
 3. Ease of Movement (EVM)
 
     EVM is a volume-based oscillator that indicates the ease at which prices rise and fall.
     
-    <img src="../images/TIs/D.png">
+    <p align="center">
+        <img src="../images/TIs/D.png">
+    </p>
 
 4. Force Index
 
     Force Index is an oscillator that measures buying and selling pressure based on volume, direction of stock price, and the extent of price movement.
 
-    <img src="../images/TIs/E.png">
+    <p align="center">
+        <img src="../images/TIs/E.png">
+    </p>
 
 5. Moving Averages (SMA)
 
@@ -61,35 +71,49 @@ Our supervised learning method makes use of 9 technical indicators to aid predic
 
     **Simple Moving Average 5-day**
     
-    <img src="../images/TIs/F.png">
+    <p align="center">
+        <img src="../images/TIs/F.png">
+    </p>
 
     **Simple Moving Average 20-day**
 
-     <img src="../images/TIs/G.png" width="220px">
+    <p align="center">
+        <img src="../images/TIs/G.png" width="220px">
+    </p>
 
     **Simple Moving Average Ratio**
 
-    <img src="../images/TIs/H.png">
+    <p align="center">
+        <img src="../images/TIs/H.png">
+    </p>
 
     **Exponentially-weighted Moving Average 5-day**
 
-    <img src="../images/TIs/I.png">
+    <p align="center">
+        <img src="../images/TIs/I.png">
+    </p>
 
     **Exponentially-weighted Moving Average 20-day**
 
-    <img src="../images/TIs/I.png">
+    <p align="center">
+        <img src="../images/TIs/I.png">
+    </p>
 
 6. Moving Average Convergence Divergence (MACD)
     
     MACD generates a trend analysis based on the convergence or divergence of two Exponentially-weighted Moving Averages.
 
-    <img src="../images/TIs/J.png">
+    <p align="center">
+        <img src="../images/TIs/J.png">
+    </p>
 
 7. Rate of Change (ROC)
 
     ROC measures the percentage change in prices between a given date’s price and that of n days prior. The sign of ROC indicates either a bearish or bullish signal.
 
-    <img src="../images/TIs/K.png">
+    <p align="center">
+        <img src="../images/TIs/K.png">
+    </p>
 
 # Methods
 
@@ -107,11 +131,11 @@ An LSTM model from Keras was used to run the neural network. The output dimensio
 # Results
 ## K-Means Clustering
 Before any analysis was performed, it was important to normalize the movement of the selected stocks since the scale for the price can vary significantly. The non-normalized and normalized movement graphs can be seen below, which clearly demonstrates the purpose of these operations. 
-
-<img src="../images/KMeans/NNApple.png" width="40%"/>     <img src="../images/KMeans/NNTesla.png" width="40%"/>
-
-
-<img src="../images/KMeans/NApple.png" width="40%"/>     <img src="../images/KMeans/NTesla.png" width="40%"/>
+<p align="center">
+    <img src="../images/KMeans/NNApple.png" width="40%"/> 
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <img src="../images/KMeans/NNTesla.png" width="40.6%"/>
+</p>
 
 
 Initially, the K-means clustering analysis was performed without such normalization, which yielded undesired results; the plot of such clustering can be seen below:
@@ -131,7 +155,7 @@ After recognizing the need for normalization, another clustering analysis was pe
 The stocks were approximately split based on their performance throughout the year. More analysis will have to be performed before the final stage on the exact parameters for such clustering, but the price changes throughout the year is the initial hypothesis, which qualitatively makes sense; however, as previously mentioned, a more extensive technical analysis will be performed. The plot for K-means clustering with normalized price movements is provided below. 
 
 <p align="center">
-    <img src="../images/KMeans/NClustering.png" width="80%" />     
+    <img src="../images/KMeans/NClustering.png" width="60%" />     
 </p>
 
 ## LSTM
@@ -151,7 +175,9 @@ Here’s an example of running the algorithm on Apple and TSLA from 2014 to 2021
 3. 1 hidden layer with output dimensions = 90 (5 per indicator) and an output layer with dimension = 18 (one per indicator)
 
 <p align="center">    
-    <img src="../images/LSTM/1.png" width="40%"/>     <img src="../images/LSTM/2.png" width="40%"/>
+    <img src="../images/LSTM/1.png" width="40%"/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <img src="../images/LSTM/2.png" width="40%"/>
 </p>
 
 There were, however, some surprising results. For example, from the second half of 2019 until present day, TSLA has been a very volatile stock. To see if this impacted the error, we only ran the algorithm from 2014 to mid-2019 with the same parameters:
@@ -185,28 +211,66 @@ In the end it is obvious that choosing the best parameters for the LSTM will var
 
 To show this I’ll run this analysis on one stock from each KMeans cluster. 
 
-   **From AMGN from Cluster 0:**
-    <p align="center">
-        <img src="../images/LSTM/5.png" width="40%" />     
-    </p>
-<p>
+<p align="center">
+    <b>AMGN from Cluster 0</b>
     <br>
-    <b>BIIB from Cluster 1:</b>
-    <br>
-    <img src="../images/LSTM/6.png" width="40%" />     
-<!--     <b>BIIB from Cluster 1:</b>
-    <img src="../images/LSTM/6.png" width="80%" />     
-    <b>BIIB from Cluster 1:</b>
-    <img src="../images/LSTM/6.png" width="80%" />     
-    <b>BIIB from Cluster 1:</b>
-    <img src="../images/LSTM/6.png" width="80%" />     
-    <b>BIIB from Cluster 1:</b>
-    <img src="../images/LSTM/6.png" width="80%" />     
-    <b>BIIB from Cluster 1:</b>
-    <img src="../images/LSTM/6.png" width="80%" /> -->
+    <img src="../images/LSTM/5.png" width="40%" />     
 </p>
 
+<br>
+<p align="center">
+    <b>BIIB from Cluster 1</b>
+    <br>
+    <img src="../images/LSTM/6.png" width="40%" />     
+</p>
+
+<br>
+<p align="center">
+    <b>AAPL and TSLA from Cluster 2</b>
+    <br>
+    <img src="../images/LSTM/7.png" width="40%"/> 
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <img src="../images/LSTM/8.png" width="40%"/>    
+</p>
+
+<br>
+<p align="center">
+    <b>ADP from Cluster 3</b>
+    <br>
+    <img src="../images/LSTM/9.png" width="40%" />     
+</p>
+
+<br>
+<p align="center">
+    <b>CSX from Cluster 4</b>
+    <br>
+    <img src="../images/LSTM/10.png" width="40%" />     
+</p>
+
+<br>
+<p align="center">
+    <b>LCRX from Cluster 5</b>
+    <br>
+    <img src="../images/LSTM/11.png" width="40%" />     
+</p>
 
 # Discussion
+
+## K-Means Clustering
+The overall findings from the K-means clustering show that the stocks in each cluster were split based on two main parameters: their performance throughout the year and the industry/sectors they belong to. More in-depth analysis will have to be conducted in the next couple of weeks to determine the exact correlation between the clusters formed and the aforementioned parameters. However, certain patterns and interconnectedness of stocks within each cluster can already be clearly seen. 
+ 
+For example, AAPL, TSLA, SNPS, INTU were all grouped in Cluster #2, and they are all software or big tech stocks that experienced a nose dive, but then significant growth during the coronavirus pandemic. ZM, PTON, DOCU, and NFLX on the other hand were grouped together into Cluster #4, which we refer to as the pandemic cluster. Nearly all these stocks were well-positioned to grow during the coronavirus pandemic (i.e. Zoom with its video conferencing platform and Peleton with its home workout stationary bicycles, and Netflix with its home entertainment streaming service). Cluster #5 almost exclusively consists of semiconductor manufacturing companies (AMAT, ADI, INTC, NXPI, AVGO, MCHP, XLNX, etc.). Of the prominent semiconductor manufacturers, only AMD and NVDA are missing from this cluster, which can be explained by the fact that these two companies significantly outperformed the average trend in this sector due to their chips being used in the new generation of gaming consoles. 
+ 
+Lastly, we reiterate on the importance of the normalization of the price movements prior to performing the K-means analysis. The consequent steps for such analysis would be to run the algorithm on a larger array of stocks, test different parameters (change the number of clusters as well as the parameters for the dimensionality reduction algorithm), and perform a more in-depth quantitative analysis on the correlation between stocks within each cluster, which will ultimately help us determine the usefulness of the obtained data. 
+
 ## LSTM
 
+The overall findings from the neural network was that it is extremely difficult to accurately predict the next day's stock closing price. After varying several of the parameters, we found that 60 days was not the optimal amount of time to use in prediction, and only using 30 days of data actually increased accuracy. Furthermore, we found that a densely connected hidden layer decreased accuracy as well. The larger LSTM output dimensions increased the accuracy, but it also led to much longer run times for the model. Lastly, we found that volatile stocks were harder to predict than stable stocks. Below is an example of predictions for tomorrow's stock data for AAPL.
+
+    High Prediction: 123.96113
+    Low Prediction: 123.550385
+    Open Prediction: 123.82444
+    Close Prediction: 122.549904
+    Volume Prediction: 36871924.0
+    
+Note that this model was trained without using the past 60 days, so the neural network predicted the stock data to be much lower than it will likely be in actuality.
