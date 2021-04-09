@@ -132,30 +132,29 @@ An LSTM model from Keras was used to run the neural network. The output dimensio
 ## K-Means Clustering
 Before any analysis was performed, it was important to normalize the movement of the selected stocks since the scale for the price can vary significantly. The non-normalized and normalized movement graphs can be seen below, which clearly demonstrates the purpose of these operations. 
 <p align="center">
-    <img src="../images/KMeans/NNApple.png" width="40%"/> 
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <img src="../images/KMeans/NNTesla.png" width="40.6%"/>
+    <img src="../images/KMeans/NNApple.png" width="49%"/>
+    <img src="../images/KMeans/NNTesla.png" width="49.5%"/>
 </p>
 
 
 Initially, the K-means clustering analysis was performed without such normalization, which yielded undesired results; the plot of such clustering can be seen below:
 
 <p align="center">
-    <img src="../images/KMeans/NNClustering.png" width="60%" />     
+    <img src="../images/KMeans/NNClustering.png" width="75%" />     
 </p>
 
 After recognizing the need for normalization, another clustering analysis was performed. The 100 selected stocks were separated in 6 clusters. This number of clusters was selected based on the approximate number of sectors that these stocks belong to. As a result of such clustering, the  companies were split up the following way:
 
 
 <p align="center">
-    <img src="../images/KMeans/Clusters.png" width="60%" />     
+    <img src="../images/KMeans/Clusters.png" width="75%" />     
 </p>
 
 
 The stocks were approximately split based on their performance throughout the year. More analysis will have to be performed before the final stage on the exact parameters for such clustering, but the price changes throughout the year is the initial hypothesis, which qualitatively makes sense; however, as previously mentioned, a more extensive technical analysis will be performed. The plot for K-means clustering with normalized price movements is provided below. 
 
 <p align="center">
-    <img src="../images/KMeans/NClustering.png" width="60%" />     
+    <img src="../images/KMeans/NClustering.png" width="75%" />     
 </p>
 
 ## LSTM
@@ -175,9 +174,9 @@ Here’s an example of running the algorithm on Apple and TSLA from 2014 to 2021
 3. 1 hidden layer with output dimensions = 90 (5 per indicator) and an output layer with dimension = 18 (one per indicator)
 
 <p align="center">    
-    <img src="../images/LSTM/1.png" width="40%"/>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <img src="../images/LSTM/2.png" width="40%"/>
+    <img src="../images/LSTM/1.png" width="47%"/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <img src="../images/LSTM/2.png" width="47%"/>
 </p>
 
 There were, however, some surprising results. For example, from the second half of 2019 until present day, TSLA has been a very volatile stock. To see if this impacted the error, we only ran the algorithm from 2014 to mid-2019 with the same parameters:
@@ -187,7 +186,7 @@ There were, however, some surprising results. For example, from the second half 
 3. 1 hidden layer with output dimensions = 90 (5 per indicator) and an output layer with dimension = 18 (one per indicator)
 
 <p align="center">
-    <img src="../images/LSTM/3.png" width="40%"/>
+    <img src="../images/LSTM/3.png" width="50%"/>
 </p>
 
 As observed, the root mean squared error actually went up. This was surprising because volatility usually makes stock prices harder to predict, which did not happen in this case.
@@ -199,7 +198,7 @@ Another surprising result was running the algorithm on TSLA from 2014 to 2021 wi
 3. Output layer with dimension = 18 (one per indicator)
 
 <p align="center">
-    <img src="../images/LSTM/4.png" width="40%" />     
+    <img src="../images/LSTM/4.png" width="50%" />     
 </p>
 
 This gave our best result since it had the lowest root mean squared error among all the TSLA parameter changes made. This is surprising because adding LSTM hidden layers supposedly makes the model deeper, and more of a deep learning technique.
@@ -214,44 +213,44 @@ To show this I’ll run this analysis on one stock from each KMeans cluster.
 <p align="center">
     <b>AMGN from Cluster 0</b>
     <br>
-    <img src="../images/LSTM/5.png" width="40%" />     
+    <img src="../images/LSTM/5.png" width="50%" />     
 </p>
 
 <br>
 <p align="center">
     <b>BIIB from Cluster 1</b>
     <br>
-    <img src="../images/LSTM/6.png" width="40%" />     
+    <img src="../images/LSTM/6.png" width="50%" />     
 </p>
 
 <br>
 <p align="center">
     <b>AAPL and TSLA from Cluster 2</b>
     <br>
-    <img src="../images/LSTM/7.png" width="40%"/> 
+    <img src="../images/LSTM/7.png" width="46%"/> 
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <img src="../images/LSTM/8.png" width="40%"/>    
+    <img src="../images/LSTM/8.png" width="46%"/>    
 </p>
 
 <br>
 <p align="center">
     <b>ADP from Cluster 3</b>
     <br>
-    <img src="../images/LSTM/9.png" width="40%" />     
+    <img src="../images/LSTM/9.png" width="50%" />     
 </p>
 
 <br>
 <p align="center">
     <b>CSX from Cluster 4</b>
     <br>
-    <img src="../images/LSTM/10.png" width="40%" />     
+    <img src="../images/LSTM/10.png" width="50%" />     
 </p>
 
 <br>
 <p align="center">
     <b>LCRX from Cluster 5</b>
     <br>
-    <img src="../images/LSTM/11.png" width="40%" />     
+    <img src="../images/LSTM/11.png" width="50%" />     
 </p>
 
 # Discussion
