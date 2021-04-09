@@ -185,11 +185,11 @@ In the end it is obvious that choosing the best parameters for the LSTM will var
 
 To show this I’ll run this analysis on one stock from each KMeans cluster. 
 
-
-<p align="center">
-    <b>From AMGN from Cluster 0:</b>
-    <br>
-    <img src="../images/LSTM/5.png" width="40%" />     
+   **From AMGN from Cluster 0:**
+    <p align="center">
+        <img src="../images/LSTM/5.png" width="40%" />     
+    </p>
+<p>
     <br>
     <b>BIIB from Cluster 1:</b>
     <br>
