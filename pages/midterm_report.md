@@ -227,9 +227,9 @@ To show this I’ll run this analysis on one stock from each KMeans cluster.
 <p align="center">
     <b>AAPL and TSLA from Cluster 2</b>
     <br>
-    <img src="../images/LSTM/7.png" width="46%"/> 
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <img src="../images/LSTM/8.png" width="46%"/>    
+    <img src="../images/LSTM/7.png" width="47%"> 
+        &nbsp;&nbsp;&nbsp;
+    <img src="../images/LSTM/8.png" width="47%">    
 </p>
 
 <br>
