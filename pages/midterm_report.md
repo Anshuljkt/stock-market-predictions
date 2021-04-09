@@ -136,6 +136,11 @@ Before any analysis was performed, it was important to normalize the movement of
     <img src="../images/KMeans/NNTesla.png" width="49.5%"/>
 </p>
 
+<p align="center">
+    <img src="../images/KMeans/NApple.png" width="49%"/>
+    <img src="../images/KMeans/NTesla.png" width="49.5%"/>
+</p>
+
 
 Initially, the K-means clustering analysis was performed without such normalization, which yielded undesired results; the plot of such clustering can be seen below:
 
