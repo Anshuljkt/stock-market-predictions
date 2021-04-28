@@ -293,7 +293,7 @@ Below is an example of the new results visualizations, these results appear simi
 <p align="center">
     <b>Stock data accuracy for model trained with AMZN and tested with AMGN</b>
     <br>
-    <img src="../images/KMSTM/lstm.png" width="40%" />
+    <img src="../images/KMSTM/lstm.png" width="55%" />
 </p>
 
 <br>
