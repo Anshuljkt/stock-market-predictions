@@ -1,18 +1,16 @@
 ---
-title: Midterm Report
-description: April 8, 2021
-filename: midterm_report.md
+title: Final Report
+description: April 27, 2021
+filename: final_report.md
 --- 
 [Homepage](/stock-market-predictions/)
 
 [Project Proposal](/stock-market-predictions/pages/proposal)
 
-[Final Report](/stock-market-predictions/pages/final_report)
-
+[Midterm Report](/stock-market-predictions/pages/midterm_report)
 
 
 # Introduction/Background
-Stock markets are highly volatile in nature: millions of market participants are united in attempting to maximize returns through informed financial decisions. With the recent increase in availability of market data, various computational techniques are being studied for predicting stock movements. In this Midterm Update, we have gathered the data necessary, calculated the required technical indicators, set up K-means clustering and a neural network as a prediction model. 
 
 
 ## Problem Definition
@@ -130,16 +128,20 @@ This sum is then normalized with a normalizer since stock prices across the diff
 Long Short-Term Modeling is one of the preferred methods for predicting stock closing prices. The first step we did was accumulate the dataset using all 18 indicators (6 from Yahoo Finance, and 12 technical indicators derived from Yahoo Finance). Then the dataset was scaled for each indicator from 0 to 1. The dataset was split into testing and training data, due to the quantity of stock data that is available, but difficulty of prediction, we used a 75%-25% split between training and testing data. The training set inputs contain the scaled data for each indicator, for the 60 days prior to the prediction day, this is tested against the data on the 61st day of that stock. The number of days in the LSTM model were varied to minimize error. In order to ensure the testing and training data was equally spread out, every fourth day in the dataset was used for testing.
  
 An LSTM model from Keras was used to run the neural network. The output dimension of this LSTM model varied from 100 to 500 dimensions. Next, the model used Densely connected neural networks, the default we used was a hidden layer of 5 times the number of indicators, followed by an output layer the same size as the number of indicators. The size and number of Densely connected neural networks was also varied in order to minimize error. The model was evaluated using mean squared error. 
+ 
+Lastly, the LSTM model was run using the results from the K-means clustering to determine the effectiveness of an LSTM model trained with one stocks data, tested against another stocks data. To perform this analysis, one stock was chosen from each K-means clustering algorithm. Then, the LSTM model was trained with each stock, and tested to determine the error when tested against other stocks. This process then repeated with various stocks in the same category.
 
 # Results
 ## K-Means Clustering
 Before any analysis was performed, it was important to normalize the movement of the selected stocks since the scale for the price can vary significantly. The non-normalized and normalized movement graphs can be seen below, which clearly demonstrates the purpose of these operations. 
 <p align="center">
+    <b>Non-Normalized Movement</b><br>
     <img src="../images/KMeans/NNApple.png" width="49%"/>
     <img src="../images/KMeans/NNTesla.png" width="49.5%"/>
 </p>
 
 <p align="center">
+    <b>Normalized Movement</b><br>
     <img src="../images/KMeans/NApple.png" width="49%"/>
     <img src="../images/KMeans/NTesla.png" width="49.5%"/>
 </p>
@@ -260,6 +262,41 @@ To show this I’ll run this analysis on one stock from each KMeans cluster.
     <br>
     <img src="../images/LSTM/11.png" width="50%" />     
 </p>
+
+<br>
+
+## K-Means Clustering Evaluation using LSTM
+The first new results show the comparison of training the LSTM model on one stock, and testing the LSTM model on a stock of a **different** category. For this analysis, 6 random stocks were selected, one from each category from the K-means analysis. Then, the model was run 36 times so each stock was compared as the testing and training stock compared to all other stocks. The model used a hidden state vector dimension of 200, hidden layer output dimension of 54, and 60 day window, this was not the most accurate model, but had reasonable accuracy for the runtime speed and is sufficient for comparing errors between stocks.
+
+<br>
+
+<p align="center">
+    <b>Mean square error of stocks trained and tested against stocks in different categories</b>
+    <br>
+    <img src="../images/KMSTM/diff.png" width="80%" />
+</p>
+
+The second new results show the comparison of training the LSTM model on one stock, and testing the LSTM model on a stock of the **same** category. For this analysis, 24 random stocks were selected, four from each category from the K-means analysis. Then, the model was run 24 times. The stock that was used in the ‘different category analysis’ was the only training stock, and then the testing stock varied in each test. This model also used a hidden state vector dimension of 200, hidden layer output dimension of 54, and 60 day window.
+
+<br>
+
+<p align="center">
+    <b>Mean square error of stocks trained and tested against stocks in the same category</b>
+    <br>
+    <img src="../images/KMSTM/same.png" width="80%" />
+</p>
+
+Below is an example of the new results visualizations, these results appear similar to the results of the previous section, as the only difference is the training and testing stocks are different. For example, the visualization below shows a stock that was trained with AMZN stock data, then tested against AGMN stock data. The RSME value of 0.07326 can be found in the tables above.
+
+<br>
+
+<p align="center">
+    <b>Stock data accuracy for model trained with AMZN and tested with AMGN</b>
+    <br>
+    <img src="../images/KMSTM/lstm.png" width="40%" />
+</p>
+
+<br>
 
 # Discussion
 
