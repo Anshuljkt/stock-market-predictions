@@ -309,12 +309,29 @@ Lastly, we reiterate on the importance of the normalization of the price movemen
 
 ## LSTM
 
-The overall findings from the neural network was that it is extremely difficult to accurately predict the next day's stock closing price. After varying several of the parameters, we found that 60 days was not the optimal amount of time to use in prediction, and only using 30 days of data actually increased accuracy. Furthermore, we found that a densely connected hidden layer decreased accuracy as well. The larger LSTM output dimensions increased the accuracy, but it also led to much longer run times for the model. Lastly, we found that volatile stocks were harder to predict than stable stocks. Below is an example of predictions for tomorrow's stock data for AAPL.
+The overall findings from the neural network was that it is extremely difficult to accurately predict the next day's stock closing price. After varying several of the parameters, we found that 60 days was not the optimal amount of time to use in prediction, and only using 30 days of data actually increased accuracy. Furthermore, we found that a densely connected hidden layer decreased accuracy as well. The larger LSTM output dimensions increased the accuracy, but it also led to much longer run times for the model. Lastly, we found that volatile stocks were harder to predict than stable stocks. Below is an example of predictions for April 1st, 2021 (the day after the midterm report for this project was due) stock data for AAPL. 
 
     High Prediction: 123.96113
     Low Prediction: 123.550385
     Open Prediction: 123.82444
     Close Prediction: 122.549904
     Volume Prediction: 36871924.0
+
+The actual stock market data on this was actually…
+
+    High: 124.18
+    Low: 122.49
+    Open: 123.66
+    Close: 123.00
+    Volume: 74957400
+
     
-Note that this model was trained without using the past 60 days, so the neural network predicted the stock data to be much lower than it will likely be in actuality.
+Below is an example of predicti
+ons for April 28th, 2021 (the day after the final report for this project was due) stock data for AAPL. To check the accuracy of these projected results, please visit... https://finance.yahoo.com/quote/AAPL/history.
+High Prediction: 130.49356
+Low Prediction: 126.34177
+Open Prediction: 127.9119
+Close Prediction: 129.41696
+Volume Prediction: 100858020.0
+Note that this model was trained without using the prior 60 days for both models, so the neural network predicted the stock data to be much lower than it will likely be in actuality due to the recent volatile nature of the stock market compared to historical data.
+
