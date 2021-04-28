@@ -325,13 +325,25 @@ The actual stock market data on this was actually…
     Close: 123.00
     Volume: 74957400
 
-    
-Below is an example of predicti
-ons for April 28th, 2021 (the day after the final report for this project was due) stock data for AAPL. To check the accuracy of these projected results, please visit... https://finance.yahoo.com/quote/AAPL/history.
-High Prediction: 130.49356
-Low Prediction: 126.34177
-Open Prediction: 127.9119
-Close Prediction: 129.41696
-Volume Prediction: 100858020.0
+Below is an example of predictions for April 28th, 2021 (the day after the final report for this project was due) stock data for AAPL. To check the accuracy of these projected results, please visit: https://finance.yahoo.com/quote/AAPL/history.
+
+    High Prediction: 130.49356
+    Low Prediction: 126.34177
+    Open Prediction: 127.9119
+    Close Prediction: 129.41696
+    Volume Prediction: 100858020.0
+
 Note that this model was trained without using the prior 60 days for both models, so the neural network predicted the stock data to be much lower than it will likely be in actuality due to the recent volatile nature of the stock market compared to historical data.
 
+
+## K-Means Clustering Evaluation using LSTM
+
+The findings from the LSTM analysis of K-means clustering showed 2 general conclusions. First off, the accuracy of the models when trained with other stock data was surprisingly close to the accuracy of the models when trained with its own stock data. This does make sense as stock data movements are generally similar across all stocks, so it makes sense that the specific stock used to train the model matters less than one might think. However, the best accuracy of the model was always when the training and testing stock was the same, so there is incentive to train and test a model with the same stock to maximize accuracy. This first finding has implications in stock market machine learning because models may be able to experiment with using several stocks as features for one training model, since the trends appear to be replicable across different stocks.
+
+The second finding was that stocks tested against stocks trained in the same category had greater accuracy than stocks tested against stocks trained in different categories. Also, these results showed that some categories did not represent the trends in other categories well, while some categories translated across the entire stock market well. For example, Category 5, which was mostly semiconductor manufacturers, had very poor accuracy when QCOM was the training data for other stocks. Note that only a small random sample of comparisons were performed since the model does have some significant runtime, but overall the relationships between and within categories are extremely interesting to analyze. Overall, this analysis does show that the K-means clustering results did translate to the LSTM model results, and it shows how unsupervised and supervised learning algorithms can be effectively used in conjunction with each other.
+
+
+# Final Remarks
+Overall, it can be concluded that the short term stock market forecasting our group created can be reasonably accurate, but is not accurate enough to inform trading decisions. Stock markets are volatile by nature and thus cannot be modeled purely with historical stock market data. To increase accuracy in future work, stock market forecasters may need to use more complicated artificial intelligence or introduce new dependent variables. For example, in our next steps we would look to introduce natural language processing to perform sentiment analysis on related news articles, social media, and other external data sources. This approach would require more advanced machine learning techniques, such as Naive Bayes or deep learning, to classify opinions, as well as data scraping and data cleaning.
+
+Our K-means model, LSTM model, and analysis of the relation between K-means and LSTM demonstrate our groups ability to utilize ML techniques to obtain meaningful results as shown in our results section, and explained in our discussion section.
